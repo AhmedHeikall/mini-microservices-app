@@ -1,2 +1,3 @@
-# mini-microservices-app
-a taste of microservices architecture , build from scratch
+# Mini Microservices App
+
+a taste of microservices architecture
