@@ -1,6 +1,6 @@
 # Mini Microservices App
 
-<h4 align='center'>a taste of microservices architecture</h4>
+<h3 align='center'>a taste of microservices architecture</h3>
 
 ## Posts Service
 

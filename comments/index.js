@@ -1,9 +1,12 @@
 const express = require("express");
 const bodyparser = require("body-parser");
+const cors = require("cors");
+
 const { randomBytes } = require("crypto");
 
 const app = express();
 app.use(bodyparser.json());
+app.use(cors());
 
 // key -> id of a post: string , value -> {id of a comment: string, content: string}
 commentsByPostId = {};
