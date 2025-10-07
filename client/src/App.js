@@ -1,10 +1,12 @@
-import PostCreate from "./components/postcreate/PostCreate";
+import PostCreate from "./components/posts/PostCreate";
+import PostList from "./components/posts/PostList";
 import "./app.css";
 function App() {
   return (
     <div className="app-container">
-      <h1 className="app-title">Mini MicroService App</h1>
+      <h1 className="app-title">Mini Microservices App</h1>
       <PostCreate />
+      <PostList />
     </div>
   );
 }
