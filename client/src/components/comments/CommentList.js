@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import React, { useState, useEffect } from "react";
+// import axios from "axios";
 import "./commentlist.css";
 
-const CommentList = ({ postId }) => {
-  const [comments, setComments] = useState([]);
+const CommentList = ({ comments }) => {
+  // const [comments, setComments] = useState([]);
 
-  const fetchComments = async () => {
-    const res = await axios.get(
-      `http://localhost:4001/posts/${postId}/comments`
-    );
+  // const fetchComments = async () => {
+  //   const res = await axios.get(
+  //     `http://localhost:4001/posts/${postId}/comments`
+  //   );
 
-    setComments(res.data);
-  };
+  //   setComments(res.data);
+  // };
 
-  useEffect(() => {
-    fetchComments();
-  }, []);
+  // useEffect(() => {
+  //   fetchComments();
+  // }, []);
 
   if (!comments || comments.length === 0) {
     return <p className="no-comments">No comments yet.</p>;

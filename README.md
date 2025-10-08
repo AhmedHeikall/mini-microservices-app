@@ -45,10 +45,10 @@ It receives events from services and **publishes them to all subscribed listener
 
 ## Query Service
 
-| path    | method | Body                                                         | Goal                                              |
-| ------- | ------ | ------------------------------------------------------------ | ------------------------------------------------- |
-| /posts  | Get    | -                                                            | Provide full listing of Posts + Comments          |
-| /events | POST   | {type: 'PostCreated', data} + {type: 'CommentCreated', data} | save posts + comments in effecient data structure |
+| path    | method | Body | Goal                                                                           |
+| ------- | ------ | ---- | ------------------------------------------------------------------------------ |
+| /posts  | Get    | -    | Provide full listing of Posts + Comments                                       |
+| /events | POST   | -    | parsing incoming events and saved posts + comments in effecient data structure |
 
 ## client
 
