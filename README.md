@@ -2,6 +2,29 @@
 
 <h3 align='center'>a taste of microservices architecture</h3>
 
+## Microservices Architecture
+
+- This project is built using a **Microservices Architecture** approach with **Asynchronous communication** between services.
+
+### Communication Strategy
+
+We use **async communication** (message-based) to minimize direct requests between services — applying a **request minimization strategy** for better scalability and fault tolerance.
+
+Our **Event Bus** is custom-built using **Express.js**.  
+It receives events from services and **publishes them to all subscribed listeners**, ensuring that each service stays in sync without direct dependencies.
+
+### Benefits
+
+1. **Query Service Independence**  
+   The Query service has **zero dependencies** on other services.
+2. **High Performance**
+   The Query service is **extremely fast** because it works with pre-synced data.
+
+### Trade-offs
+
+- **Data Duplication**
+  This approach introduces **data duplication** across services to achieve faster query performance and better service isolation.
+
 ## Posts Service
 
 | path   | method | Body            | Goal               |
@@ -27,6 +50,7 @@ It uses a simple and scalable folder organization.
 - View comments under each post
 - Responsive and clean UI
 
+```
 src/
 ├── components/
 │ ├── posts/
@@ -44,3 +68,4 @@ src/
 ├── App.js # Root component
 ├── App.css # Global styles
 └── index.js # React entry point
+```
