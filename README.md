@@ -27,17 +27,28 @@ It receives events from services and **publishes them to all subscribed listener
 
 ## Posts Service
 
-| path   | method | Body            | Goal               |
-| ------ | ------ | --------------- | ------------------ |
-| /posts | POST   | {title: string} | Create a new post  |
-| /posts | GET    | -               | Retrieve all Posts |
+| path    | method | Body                        | Goal                          |
+| ------- | ------ | --------------------------- | ----------------------------- |
+| /posts  | POST   | {title: string}             | Create a new post             |
+| /posts  | GET    | -                           | Retrieve all Posts            |
+| /events | POST   | {type: 'PostCreated', data} | Send Event to Event-Bus       |
+| /events | POST   | -                           | Received Event from Event-Bus |
 
 ## Comments Service
 
-| path                | method | Body              | Goal                                                    |
-| ------------------- | ------ | ----------------- | ------------------------------------------------------- |
-| /posts/:id/comments | POST   | {content: string} | Create a comment associated with the given post ID      |
-| /posts/:id/comments | GET    | -                 | Retrieve all comments associated with the given post ID |
+| path                | method | Body                           | Goal                                                    |
+| ------------------- | ------ | ------------------------------ | ------------------------------------------------------- |
+| /posts/:id/comments | POST   | {content: string}              | Create a comment associated with the given post ID      |
+| /posts/:id/comments | GET    | -                              | Retrieve all comments associated with the given post ID |
+| /events             | POST   | {type: 'CommentCreated', data} | Send Event to Event-Bus                                 |
+| /events             | POST   | -                              | Received Event from Event-Bus                           |
+
+## Query Service
+
+| path    | method | Body                                                         | Goal                                              |
+| ------- | ------ | ------------------------------------------------------------ | ------------------------------------------------- |
+| /posts  | Get    | -                                                            | Provide full listing of Posts + Comments          |
+| /events | POST   | {type: 'PostCreated', data} + {type: 'CommentCreated', data} | save posts + comments in effecient data structure |
 
 ## client
 
