@@ -56,10 +56,10 @@ It receives events from services and **publishes them to all subscribed listener
 
 ## Moderation Service (important)
 
-- The Moderation Service receives comment-related events from the Event Bus and automatically reviews the content of each comment.
-- If a comment contains specific flagged words (e.g., “orange”), it updates the comment’s status to rejected; otherwise, it marks it as approved.
-- The default status for all new comments is pending.
-- After moderation, the service emits an updated event back to the Event Bus, which notifies all other services (including the Query Service) to keep data consistent and up to date.
+- The **Moderation Service** receives comment-related events from the **Event Bus** and automatically reviews the content of each comment.
+- If a comment contains specific flagged words (e.g., “orange”), it updates the comment’s status to **rejected**; otherwise, it marks it as **approved**.
+- The default status for all new comments is **pending**.
+- After moderation, the service emits an updated event back to the **Event Bus**, which notifies all other services (including the **Query Service and Comment Service**) to keep data consistent and up to date.
 - This process provides a smoother and safer user experience by ensuring inappropriate comments are filtered before being displayed.
 
 - in real world commentType maybe (upvoted, downvoted, promoted, anonymized, advertised ..)
