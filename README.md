@@ -89,6 +89,7 @@ Once the service is back online, it can **request the missed events** and proces
 
 ## Moderation Service (important)
 
+- The **Moderation Service** is responsible for automatically reviewing the content of user comments to ensure that inappropriate or flagged text does not appear in the system.
 - The **Moderation Service** receives comment-related events from the **Event Bus** and automatically reviews the content of each comment.
 - If a comment contains specific flagged words (e.g., “orange”), it updates the comment’s status to **rejected**; otherwise, it marks it as **approved**.
 - The default status for all new comments is **pending**.
