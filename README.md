@@ -45,10 +45,24 @@ It receives events from services and **publishes them to all subscribed listener
 
 ## Query Service
 
+- The Query Service is responsible for serving combined data of posts and their related comments in a single response. (The query service is about presentation logic)
+- It listens for events from the Event Bus (such as post or comment creation) and updates its local data store accordingly.
+- This approach ensures fast and efficient read operations with zero dependencies on other services.
+
 | path    | method | Body | Goal                                                                           |
 | ------- | ------ | ---- | ------------------------------------------------------------------------------ |
-| /posts  | Get    | -    | Provide full listing of Posts + Comments                                       |
+| /posts  | Get    | -    | Provide full listing of Posts + Comments in one single request                 |
 | /events | POST   | -    | parsing incoming events and saved posts + comments in effecient data structure |
+
+## Moderation Service (important)
+
+- The Moderation Service receives comment-related events from the Event Bus and automatically reviews the content of each comment.
+- If a comment contains specific flagged words (e.g., “orange”), it updates the comment’s status to rejected; otherwise, it marks it as approved.
+- The default status for all new comments is pending.
+- After moderation, the service emits an updated event back to the Event Bus, which notifies all other services (including the Query Service) to keep data consistent and up to date.
+- This process provides a smoother and safer user experience by ensuring inappropriate comments are filtered before being displayed.
+
+- in real world commentType maybe (upvoted, downvoted, promoted, anonymized, advertised ..)
 
 ## client
 
@@ -57,7 +71,7 @@ It uses a simple and scalable folder organization.
 
 - Create a new post
 - View list of posts
-- Add comments to any post
+- Add comments to any post (with flag do 3 different states 'approved' | 'rejected' | 'pending')
 - View comments under each post
 - Responsive and clean UI
 
