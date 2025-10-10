@@ -7,8 +7,12 @@ const app = express();
 app.use(bodyparser.json());
 app.use(cors());
 
+const events = [];
+
 app.post("/events", (req, res) => {
   const event = req.body;
+
+  events.push(event);
 
   // send request to all running services
 
@@ -30,6 +34,10 @@ app.post("/events", (req, res) => {
   });
 
   res.send({ status: "ok" });
+});
+
+app.get("/events", (req, res) => {
+  res.send(events);
 });
 
 app.listen(4005, () => {

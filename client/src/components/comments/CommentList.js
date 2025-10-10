@@ -1,34 +1,33 @@
-// import React, { useState, useEffect } from "react";
-// import axios from "axios";
 import "./commentlist.css";
 
 const CommentList = ({ comments }) => {
-  // const [comments, setComments] = useState([]);
+  const renderdComments = comments.map((comment) => {
+    let content;
 
-  // const fetchComments = async () => {
-  //   const res = await axios.get(
-  //     `http://localhost:4001/posts/${postId}/comments`
-  //   );
+    if (comment.status === "approved") {
+      content = comment.content;
+    }
 
-  //   setComments(res.data);
-  // };
+    if (comment.status === "pending...") {
+      content = "This comment is pending...";
+    }
 
-  // useEffect(() => {
-  //   fetchComments();
-  // }, []);
+    if (comment.status === "rejected") {
+      content = "rejected comment";
+    }
+
+    return (
+      <li key={comment.id} className="comment-item">
+        {content}
+      </li>
+    );
+  });
 
   if (!comments || comments.length === 0) {
     return <p className="no-comments">No comments yet.</p>;
   }
-  return (
-    <ul className="comment-list">
-      {comments.map((comment) => (
-        <li key={comment.id} className="comment-item">
-          {comment.content}
-        </li>
-      ))}
-    </ul>
-  );
+
+  return <ul className="comment-list">{renderdComments}</ul>;
 };
 
 export default CommentList;

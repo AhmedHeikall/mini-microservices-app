@@ -13,12 +13,45 @@ We use **async communication** (message-based) to minimize direct requests betwe
 Our **Event Bus** is custom-built using **Express.js**.  
 It receives events from services and **publishes them to all subscribed listeners**, ensuring that each service stays in sync without direct dependencies.
 
+---
+
+### Event Synchronization (Handling Missing Events)
+
+To handle **missing or delayed events**, we implement an **event synchronization mechanism**.  
+All events passing through the Event Bus are **stored in the Event Bus database**, allowing services to:
+
+- Re-sync missed events if they were temporarily down.
+- Keep data consistent across the system.
+
+#### 🔄 Flow Example – “Store Events” Strategy
+
+1. **Post Service** emits events (`Event 1`, `Event 2`, `Event 3`) to the **Event Bus**.
+2. The **Event Bus** stores each event in its **Event Bus Data Store** before broadcasting it to all services.
+3. If a service (like **Query**) misses an event, it can later **replay all stored events** from the Event Bus database to rebuild its state.
+
+<p align="center">
+  <img src="./docs/dealing-with-missing-events.png" width="600" alt="Store Events Diagram" />
+</p>
+
+#### 🔄 Example with Multiple Services (Posts, Comments, Query, Moderation)
+
+Even if one service (e.g., **Moderation**) is temporarily unavailable, the Event Bus continues to store all incoming events.  
+Once the service is back online, it can **request the missed events** and process them to maintain data consistency.
+
+<p align="center">
+  <img src="./docs/dealing-with-missing-events2.png" width="700" alt="Dealing with Missing Events Diagram" />
+</p>
+
+---
+
 ### Benefits
 
 1. **Query Service Independence**  
    The Query service has **zero dependencies** on other services.
 2. **High Performance**
    The Query service is **extremely fast** because it works with pre-synced data.
+3. **Event Recovery**  
+   Services can **recover lost events** automatically through stored event replay.
 
 ### Trade-offs
 
