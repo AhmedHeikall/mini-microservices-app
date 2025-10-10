@@ -30,7 +30,7 @@ All events passing through the Event Bus are **stored in the Event Bus database*
 3. If a service (like **Query**) misses an event, it can later **replay all stored events** from the Event Bus database to rebuild its state.
 
 <p align="center">
-  <img src="./docs/dealing-with-missing-events.png" width="600" alt="Store Events Diagram" />
+  <img src="./docs/dealing-with-missing-events.PNG" width="600" alt="Store Events Diagram" />
 </p>
 
 #### 🔄 Example with Multiple Services (Posts, Comments, Query, Moderation)
@@ -39,7 +39,7 @@ Even if one service (e.g., **Moderation**) is temporarily unavailable, the Event
 Once the service is back online, it can **request the missed events** and process them to maintain data consistency.
 
 <p align="center">
-  <img src="./docs/dealing-with-missing-events2.png" width="700" alt="Dealing with Missing Events Diagram" />
+  <img src="./docs/dealing-with-missing-events2.PNG" width="700" alt="Dealing with Missing Events Diagram" />
 </p>
 
 ---
