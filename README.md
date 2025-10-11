@@ -109,6 +109,8 @@ This setup makes our system **portable, reliable, and easy to manage** across en
 
 - in real world commentType maybe (upvoted, downvoted, promoted, anonymized, advertised ..)
 
+---
+
 ## client
 
 This is a small, component-based React project that demonstrates a basic blog-style structure — with posts and nested comments.  
