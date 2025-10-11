@@ -1,6 +1,7 @@
 # Mini Microservices App
 
-<h3 align='center'>a taste of microservices architecture</h3>
+<h3 align='center'> **Microservices Blog App** — a microservices-based application built with Node.js, Express, Docker, and Kubernetes.
+Uses asynchronous communication through a custom Event Bus for service interaction, featuring Post, Comment, Query, and Moderation services with real-time data sync and high scalability. </h3>
 
 ## Microservices Architecture
 
