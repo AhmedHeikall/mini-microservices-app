@@ -13,8 +13,6 @@ We use **async communication** (message-based) to minimize direct requests betwe
 Our **Event Bus** is custom-built using **Express.js**.  
 It receives events from services and **publishes them to all subscribed listeners**, ensuring that each service stays in sync without direct dependencies.
 
----
-
 ### Event Synchronization (Handling Missing Events)
 
 To handle **missing or delayed events**, we implement an **event synchronization mechanism**.  
@@ -41,8 +39,6 @@ Once the service is back online, it can **request the missed events** and proces
 <p align="center">
   <img src="./docs/dealing-with-missing-events2.PNG" width="700" alt="Dealing with Missing Events Diagram" />
 </p>
-
----
 
 ### Benefits
 
