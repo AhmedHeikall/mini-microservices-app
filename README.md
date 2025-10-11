@@ -58,6 +58,21 @@ Once the service is back online, it can **request the missed events** and proces
 - **Data Duplication**
   This approach introduces **data duplication** across services to achieve faster query performance and better service isolation.
 
+## Docker & Kubernetes
+
+We use **Docker** to containerize all our microservices and **Kubernetes (K8s)** to manage and orchestrate them in production.
+
+Kubernetes handles:
+
+- **Scheduling & Scaling** – runs containers across nodes and scales automatically
+- **Self-Healing** – restarts failed containers
+- **Service Discovery & Load Balancing** – routes traffic between services
+- **Rolling Updates** – deploys new versions with zero downtime
+
+This setup makes our system **portable, reliable, and easy to manage** across environments.
+
+---
+
 ## Posts Service
 
 | path    | method | Body                        | Goal                          |

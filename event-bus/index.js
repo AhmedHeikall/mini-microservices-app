@@ -36,6 +36,7 @@ app.post("/events", (req, res) => {
   res.send({ status: "ok" });
 });
 
+// event syncing
 app.get("/events", (req, res) => {
   res.send(events);
 });
