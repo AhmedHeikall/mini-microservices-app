@@ -2,7 +2,9 @@
 
 <h3 align='center'> **Microservices Blog App** — an end-to-end microservices-based application built with Node.js, Express, Docker, and Kubernetes. </h3>
 <p  align='center'>This project includes complete setup and configuration of inter-service communication, Kubernetes pods, and all supporting infrastructure components from the ground up.</p>
+
 ---
+
 ## Microservices Architecture
 
 - This project is built using a **Microservices Architecture** approach with **Asynchronous communication** between services.
