@@ -17,13 +17,13 @@ spec:
           image: ahmedheikal/posts:0.0.1
 ---
 apiVersion: v1
-kind: Deployment
+kind: Service
 metadata:
   name: posts-clusterip-srv
 spec:
   selector:
     app: posts
-  type: ClusterIp
+  type: ClusterIP
   ports:
     - name: posts
       protocol: TCP
