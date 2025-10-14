@@ -1,6 +1,6 @@
 # Mini Microservices App
 
-<h3 align='center'> **Microservices Blog App** — an end-to-end microservices-based application built with Node.js, Express, Docker, and Kubernetes. </h3>
+<h3 align='center'> Microservices Blog App — an end-to-end microservices-based application built with Node.js, Express, Docker, and Kubernetes. </h3>
 <p  align='center'>This project includes complete setup and configuration of inter-service communication, Kubernetes pods, and all supporting infrastructure components from the ground up. It also integrates an NGINX Ingress Controller and LoadBalancer service to efficiently manage traffic routing and load distribution across services.</p>
 
 ---
