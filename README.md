@@ -70,6 +70,12 @@ Kubernetes handles:
 
 This setup makes our system **portable, reliable, and easy to manage** across environments.
 
+<h3 align='center'>Kubernetes Cluster Topology</h3>
+
+<p align="center">
+  <img src="./docs/k8s-archit.PNG" width="700" alt="Kubernetes Cluster Topology" />
+</p>
+
 ---
 
 ## Posts Service
